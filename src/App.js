@@ -46,10 +46,10 @@ function App() {
       <header className="App-header">
         <img src={cake} className="Cake"/>
         <p>
-          Happy 21th Birthday!
+          Happy 21st Birthday!
         </p>
         <button onClick={setOffFirework}>
-          Firework!
+          More Firework!
         </button>
       </header>
     </div>
