@@ -1,6 +1,9 @@
+import React, { useEffect, useState } from "react";
 import cake from './cake.png';
 import './App.css';
 import confetti from 'canvas-confetti';
+
+const birthdate = '2001-01-22'
 
 var count = 200;
 var defaults = {
@@ -40,13 +43,53 @@ function setOffFirework() {
 
 setOffFirework();
 
+function calculateAge(birthdate) {
+  const today = new Date();
+  const birthDate = new Date(birthdate);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
+function calculateDaysUntilBirthday(birthdate) {
+  const today = new Date();
+  const birthDate = new Date(birthdate);
+  birthDate.setFullYear(today.getFullYear());
+
+  if (today > birthDate) {
+    birthDate.setFullYear(today.getFullYear() + 1);
+  }
+
+  const timeDiff = birthDate.getTime() - today.getTime();
+  const daysUntilBirthday = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+  return daysUntilBirthday;
+}
+
 function App() {
+  const age = calculateAge(birthdate);
+  const daysUntilBirthday = calculateDaysUntilBirthday(birthdate);
+
+  const [birthdayMessage, setBirthdayMessage] = useState(`Happy ${age}st Birthday!`);
+
+  useEffect(() => {
+    if (daysUntilBirthday !== 0) {
+      const countdownMessage = `${daysUntilBirthday} days until the special day!`;
+      setBirthdayMessage(countdownMessage);
+    }
+  }, [daysUntilBirthday]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={cake} className="Cake"/>
+        <img src={cake} className="Cake" alt="Birthday Cake" />
         <p>
-          Happy 21st Birthday!
+          {birthdayMessage}
         </p>
         <button onClick={setOffFirework}>
           More Firework!
