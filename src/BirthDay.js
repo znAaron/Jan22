@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import confetti from "canvas-confetti";
+import cake from './cake.png';
+import './BirthDay.css';
+import confetti from 'canvas-confetti';
+
+
+var count = 200;
+var defaults = {
+  origin: { y: 0.7 }
+};
+
 
 const birthdate = "2001-01-22 00:00:00 EST";
 
@@ -65,12 +73,16 @@ function calculateDaysUntilBirthday(birthdate) {
 
   
   const timeDiff = birthDate.getTime() - today.getTime();
-  const daysUntilBirthday = Math.ceil(timeDiff / (1000 * 3600 *24));
+  var daysUntilBirthday = Math.ceil(timeDiff / (1000 * 3600 *24));
+
+  if (daysUntilBirthday < 0) {
+    daysUntilBirthday = 365 + daysUntilBirthday;
+  }
 
   return daysUntilBirthday;
 }
 
-function App() {
+function BirthDay() {
   const age = calculateAge(birthdate);
   const daysUntilBirthday = calculateDaysUntilBirthday(birthdate);
 
@@ -95,7 +107,7 @@ function App() {
 
   useEffect(() => {
     if (daysUntilBirthday !== 0) {
-      setGraphic("./loading.gif");
+      setGraphic(`./loading.gif`);
     }
   }, [daysUntilBirthday]);
 
@@ -116,4 +128,4 @@ function App() {
   );
 }
 
-export default App;
+export default BirthDay;
