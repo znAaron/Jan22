@@ -58,6 +58,38 @@ body {
   display: none;
 }
 
+.toast-text {
+  width: 100%;
+  white-space: normal; /* Allow text wrapping */
+  overflow: hidden; /* Ensure no overflow during typing */
+  text-align: left;
+  line-height: 1.3em;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .puppy-toast {
+    top: 35%;
+    left: 45%;
+  }
+
+  .Puppy {
+    height: 30vh;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .Paw {
+    height: 15vh;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .puppy-toast.visible {
   position: absolute;
   opacity: 1;
@@ -105,9 +137,9 @@ body {
   font-family: "pixel";
 }
 .bubble.medium {
-  width: 350px;
+  width: 340px;
   font-family: "pixel";
-  font-size: 20px;
+  font-size: 19px;
 }
 .bubble.large {
   width: 560px;
