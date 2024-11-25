@@ -5,6 +5,7 @@ import './index.css';
 
 import BirthDay from "./BirthDay";
 import Day1 from "./AdventCalendar/Day1";
+import Day2 from "./AdventCalendar/Day2";
 import TooEarly from "./AdventCalendar/TooEarly";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<BirthDay />} />
         <Route path="Day1" element={<Day1 />} />
+        <Route path="Day2" element={<Day2 />} />
         <Route path="*" element={<TooEarly />} />
       </Routes>
     </BrowserRouter>
