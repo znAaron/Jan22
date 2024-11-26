@@ -9,7 +9,7 @@ function Day2() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "今天的礼物是由纯真，善良（确信）的摇粒绒带来的。摇粒绒也不知道盒子里是什么，但只知道它很好闻，还有离圣诞节只有24天啦!";
+    "今天的礼物是由纯真，善良（确信）的摇粒绒带来的。摇粒绒也不知道盒子里是什么，只知道它很好闻，还有离圣诞节只有23天啦!";
 
   // Function to add letters one by one
   const typeText = () => {

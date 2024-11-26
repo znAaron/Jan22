@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 import "./days.css";
-import Puppy from "./Puppy_day1.png";
+import Puppy from "./Puppy_day8.png";
 import Paw from "./paw.png";
 
-function Day1() {
+function Day8() {
   const [isToastVisible, setToastVisible] = useState(false);
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "今天的礼物是由马尔济斯犬带来的,小济说希望你能喜欢www从今天开始我们一起开始倒计时吧,现在离圣诞节还有24天!";
+    "初次见面，我是八哥。你说我和小蒲长得像吗？那是自然，毕竟他是我最疼的弟弟。别看他长得这么可爱，其实可凶了。算了不说我了，好奇这礼物里面到底是什么呀！不过还有17天我也能拆礼物啦！";
 
   // Function to add letters one by one
   const typeText = () => {
@@ -51,4 +51,4 @@ function Day1() {
   );
 }
 
-export default Day1;
+export default Day8;
