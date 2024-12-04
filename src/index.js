@@ -12,6 +12,10 @@ import Day5 from "./AdventCalendar/Day5";
 import Day6 from "./AdventCalendar/Day6";
 import Day7 from "./AdventCalendar/Day7";
 import Day8 from "./AdventCalendar/Day8";
+import Day9 from "./AdventCalendar/Day9";
+import Day10 from "./AdventCalendar/Day10";
+import Day11 from "./AdventCalendar/Day11";
+import Day12 from "./AdventCalendar/Day12";
 import TooEarly from "./AdventCalendar/TooEarly";
 
 export default function App() {
@@ -27,6 +31,10 @@ export default function App() {
         <Route path="Day6" element={<Day6 />} />
         <Route path="Day7" element={<Day7 />} />
         <Route path="Day8" element={<Day8 />} />
+        <Route path="Day9" element={<Day9 />} />
+        <Route path="Day10" element={<Day10 />} />
+        <Route path="Day11" element={<Day11 />} />
+        <Route path="Day12" element={<Day12 />} />
         <Route path="*" element={<TooEarly />} />
       </Routes>
     </BrowserRouter>

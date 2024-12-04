@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./days.css";
-import Puppy from "./Puppy_day9.png";
+import Puppy from "./Puppy_day0.png";
 
 function TooEarly() {
   // State to control the visibility of the 'puppy-toast'
