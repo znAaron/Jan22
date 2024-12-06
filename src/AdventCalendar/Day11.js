@@ -9,7 +9,7 @@ function Day11() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "不准提前拆礼物哦!";
+    "节日快乐！这是提前14天的礼物！任务完成，我可以回我壁炉边舒适的小窝了。希望你的冬天也可以一直呆在暖暖的屋子里休息！然后有着数不尽的礼物，美食和喜悦。";
 
   // Function to add letters one by one
   const typeText = () => {

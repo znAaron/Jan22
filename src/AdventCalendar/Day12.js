@@ -9,7 +9,7 @@ function Day12() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "不准提前拆礼物哦!";
+    "你好，我是伯恩山索洛！今天是周六！听说大家都很喜欢周五呢，但我最喜欢的日子其实是周六。因为主人会带我出门玩好久好久。对啦，这是周六的礼物。还有13天就要圣诞节啦！";
 
   // Function to add letters one by one
   const typeText = () => {
