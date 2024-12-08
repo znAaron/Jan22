@@ -11,25 +11,33 @@ function Day2() {
   const fullText =
     "今天的礼物是由纯真，善良（确信）的摇粒绒带来的。摇粒绒也不知道盒子里是什么，只知道它很好闻，还有离圣诞节只有23天啦!";
 
-  // Function to add letters one by one
-  const typeText = () => {
-    let index = -1;
+  const [isTyping, setIsTyping] = useState(false);
 
-    const interval = setInterval(() => {
-      setDisplayText((prevText) => prevText + fullText[index]);
-      index++;
-
-      if (index >= fullText.length -1) {
-        clearInterval(interval); // Stop the interval when done
-      }
-    }, 80); // Adjust the delay for typing speed
-  };
+    const typeText = () => {
+      if (isTyping) return; // Prevent multiple intervals if already typing
+  
+      setIsTyping(true); // Set isTyping to true to block new invocations
+  
+      let index = -1;
+  
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + fullText[index]);
+        index++;
+  
+        if (index >= fullText.length - 1) {
+          clearInterval(interval);
+          setIsTyping(false); // Reset isTyping after completion
+        }
+      }, 80);
+    }
 
   // Function to show the toast and start the typing effect
   const PuppyTalk = () => {
+    if (isToastVisible) return; // Prevent multiple toasts if already visible
+
     setToastVisible(true);
-    setDisplayText(""); // Reset the text before starting
-    typeText(); // Start typing effect
+    setDisplayText("");
+    typeText();
   };
 
   return (

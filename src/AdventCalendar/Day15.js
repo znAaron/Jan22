@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 import "./days.css";
-import Puppy from "./Puppy_day8.png";
+import Puppy from "./Puppy_day15.png";
 import Paw from "./paw.png";
 
-function Day8() {
+function Day15() {
   const [isToastVisible, setToastVisible] = useState(false);
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "初次见面，我是八哥。你说我和小蒲长得像吗？那是自然，毕竟他是我最疼的弟弟。别看他长得这么可爱，其实可凶了。算了不说我了，好奇这礼物里面到底是什么呀！不过还有17天我也能拆礼物啦！";
+    "（递饮料）给你喝姜饼热可可！我刚刚去咖啡馆买了puppuccino，看到他们还有卖姜饼热可可！据说这是季节限定，感觉会很好喝。可惜我不能喝，那就给你啦！还有10天就要圣诞节啦！";
 
   const [isTyping, setIsTyping] = useState(false);
 
@@ -59,4 +59,4 @@ function Day8() {
   );
 }
 
-export default Day8;
+export default Day15;

@@ -11,25 +11,33 @@ function Day5() {
   const fullText =
     "哇，你好！我是博美小蒲，很高兴认识你！这是你今天的礼物🎁，我最喜欢在圣诞节帮忙送礼物了，因为感觉送礼物的人和收到的人都会很开心呢。总而言之圣诞节快乐，20天以后我们还会再见的www";
 
-  // Function to add letters one by one
-  const typeText = () => {
-    let index = -1;
+  const [isTyping, setIsTyping] = useState(false);
 
-    const interval = setInterval(() => {
-      setDisplayText((prevText) => prevText + fullText[index]);
-      index++;
-
-      if (index >= fullText.length -1) {
-        clearInterval(interval); // Stop the interval when done
-      }
-    }, 80); // Adjust the delay for typing speed
-  };
+    const typeText = () => {
+      if (isTyping) return; // Prevent multiple intervals if already typing
+  
+      setIsTyping(true); // Set isTyping to true to block new invocations
+  
+      let index = -1;
+  
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + fullText[index]);
+        index++;
+  
+        if (index >= fullText.length - 1) {
+          clearInterval(interval);
+          setIsTyping(false); // Reset isTyping after completion
+        }
+      }, 80);
+    }
 
   // Function to show the toast and start the typing effect
   const PuppyTalk = () => {
+    if (isToastVisible) return; // Prevent multiple toasts if already visible
+
     setToastVisible(true);
-    setDisplayText(""); // Reset the text before starting
-    typeText(); // Start typing effect
+    setDisplayText("");
+    typeText();
   };
 
   return (

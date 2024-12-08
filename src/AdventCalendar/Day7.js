@@ -11,25 +11,33 @@ function Day7() {
   const fullText =
     "你好，我是圣伯纳犬，大家喜欢叫我大伯。是小幽灵女士吗？有你的礼物请签收一下。寄件人说让我一定小心，因为这是寄给他心上人的。大伯要去继续送礼物啦，还有18天我也能放假了！";
 
-  // Function to add letters one by one
-  const typeText = () => {
-    let index = -1;
+  const [isTyping, setIsTyping] = useState(false);
 
-    const interval = setInterval(() => {
-      setDisplayText((prevText) => prevText + fullText[index]);
-      index++;
-
-      if (index >= fullText.length -1) {
-        clearInterval(interval); // Stop the interval when done
-      }
-    }, 80); // Adjust the delay for typing speed
-  };
+    const typeText = () => {
+      if (isTyping) return; // Prevent multiple intervals if already typing
+  
+      setIsTyping(true); // Set isTyping to true to block new invocations
+  
+      let index = -1;
+  
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + fullText[index]);
+        index++;
+  
+        if (index >= fullText.length - 1) {
+          clearInterval(interval);
+          setIsTyping(false); // Reset isTyping after completion
+        }
+      }, 80);
+    }
 
   // Function to show the toast and start the typing effect
   const PuppyTalk = () => {
+    if (isToastVisible) return; // Prevent multiple toasts if already visible
+
     setToastVisible(true);
-    setDisplayText(""); // Reset the text before starting
-    typeText(); // Start typing effect
+    setDisplayText("");
+    typeText();
   };
 
   return (

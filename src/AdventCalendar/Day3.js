@@ -11,25 +11,33 @@ function Day3() {
   const fullText =
     "今天的礼物大使是斗牛犬小布，小布希望你今天也能开心。不对，圣诞期间应该每天都开心，因为22天以后就能过圣诞啦！";
 
-  // Function to add letters one by one
-  const typeText = () => {
-    let index = -1;
+  const [isTyping, setIsTyping] = useState(false);
 
-    const interval = setInterval(() => {
-      setDisplayText((prevText) => prevText + fullText[index]);
-      index++;
-
-      if (index >= fullText.length -1) {
-        clearInterval(interval); // Stop the interval when done
-      }
-    }, 80); // Adjust the delay for typing speed
-  };
+    const typeText = () => {
+      if (isTyping) return; // Prevent multiple intervals if already typing
+  
+      setIsTyping(true); // Set isTyping to true to block new invocations
+  
+      let index = -1;
+  
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + fullText[index]);
+        index++;
+  
+        if (index >= fullText.length - 1) {
+          clearInterval(interval);
+          setIsTyping(false); // Reset isTyping after completion
+        }
+      }, 80);
+    }
 
   // Function to show the toast and start the typing effect
   const PuppyTalk = () => {
+    if (isToastVisible) return; // Prevent multiple toasts if already visible
+
     setToastVisible(true);
-    setDisplayText(""); // Reset the text before starting
-    typeText(); // Start typing effect
+    setDisplayText("");
+    typeText();
   };
 
   return (

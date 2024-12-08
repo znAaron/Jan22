@@ -11,25 +11,33 @@ function Day10() {
   const fullText =
     "这是一只路过的松狮犬，她叫佩佩。佩佩听说你最喜欢和狗狗们一起玩了，佩佩也想来玩。佩佩还听说你家有她最喜欢的eggnog可以喝，所以还带来了礼物来交换！佩佩真的超级期待15天以后的圣诞节！";
 
-  // Function to add letters one by one
-  const typeText = () => {
-    let index = -1;
+  const [isTyping, setIsTyping] = useState(false);
 
-    const interval = setInterval(() => {
-      setDisplayText((prevText) => prevText + fullText[index]);
-      index++;
-
-      if (index >= fullText.length -1) {
-        clearInterval(interval); // Stop the interval when done
-      }
-    }, 80); // Adjust the delay for typing speed
-  };
+    const typeText = () => {
+      if (isTyping) return; // Prevent multiple intervals if already typing
+  
+      setIsTyping(true); // Set isTyping to true to block new invocations
+  
+      let index = -1;
+  
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + fullText[index]);
+        index++;
+  
+        if (index >= fullText.length - 1) {
+          clearInterval(interval);
+          setIsTyping(false); // Reset isTyping after completion
+        }
+      }, 80);
+    }
 
   // Function to show the toast and start the typing effect
   const PuppyTalk = () => {
+    if (isToastVisible) return; // Prevent multiple toasts if already visible
+
     setToastVisible(true);
-    setDisplayText(""); // Reset the text before starting
-    typeText(); // Start typing effect
+    setDisplayText("");
+    typeText();
   };
 
   return (

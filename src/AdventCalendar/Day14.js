@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 import "./days.css";
-import Puppy from "./Puppy_day8.png";
+import Puppy from "./Puppy_day14.png";
 import Paw from "./paw.png";
 
-function Day8() {
+function Day14() {
   const [isToastVisible, setToastVisible] = useState(false);
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "初次见面，我是八哥。你说我和小蒲长得像吗？那是自然，毕竟他是我最疼的弟弟。别看他长得这么可爱，其实可凶了。算了不说我了，好奇这礼物里面到底是什么呀！不过还有17天我也能拆礼物啦！";
+    "Hello！我是西施犬妮妮，你知道我最喜欢的圣诞“传统”是什么嘛？是shopping！我最喜欢和我的朋友们一起去狗狗集市了，每次都能有各种各样的食物，甚至会有我最喜欢的牛骨髓！还有11天又能过圣诞节啦！";
 
   const [isTyping, setIsTyping] = useState(false);
 
@@ -59,4 +59,4 @@ function Day8() {
   );
 }
 
-export default Day8;
+export default Day14;

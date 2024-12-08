@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import Snowfall from "react-snowfall";
 
 import "./days.css";
-import Puppy from "./Puppy_day8.png";
+import Puppy from "./Puppy_day18.png";
 import Paw from "./paw.png";
 
-function Day8() {
+function Day18() {
   const [isToastVisible, setToastVisible] = useState(false);
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "初次见面，我是八哥。你说我和小蒲长得像吗？那是自然，毕竟他是我最疼的弟弟。别看他长得这么可爱，其实可凶了。算了不说我了，好奇这礼物里面到底是什么呀！不过还有17天我也能拆礼物啦！";
+    "你好哦，我是多多，一只拉布拉多！只有7天就要圣诞节了，我还没有织好我的袜子呢。今年我准备织一只超大的袜子，因为听说圣诞老人会往越大的袜子里放越大的礼物！";
 
   const [isTyping, setIsTyping] = useState(false);
 
@@ -43,6 +44,7 @@ function Day8() {
   return (
     <div className="AdventCalendar">
       <body>
+        <Snowfall speed={[0.1, 1.0]}/>
         <div
           className={`bubble medium bottom puppy-toast ${
             isToastVisible ? "visible" : "hidden"
@@ -59,4 +61,4 @@ function Day8() {
   );
 }
 
-export default Day8;
+export default Day18;
