@@ -10,7 +10,7 @@ function Day19() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "6";
+    "周末快乐！我是蝴蝶犬邱邱，还有6天就要圣诞啦！感觉年底大家都超级忙碌， 好像即使是圣诞节对很多人来说都不是一件轻松的事情呢。 要出远门，要筹备活动或者就算是要选择礼物也是会让人很劳累呢。 但不管有多忙，希望你都能好好休息，保持香香~";
 
   const [isTyping, setIsTyping] = useState(false);
 

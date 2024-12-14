@@ -10,7 +10,7 @@ function Day23() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "2";
+    "小德警官";
 
   const [isTyping, setIsTyping] = useState(false);
 
