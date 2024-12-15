@@ -29,7 +29,6 @@ import Day22 from "./AdventCalendar/Day22";
 import Day23 from "./AdventCalendar/Day23";
 import Day24 from "./AdventCalendar/Day24";
 import Day25 from "./AdventCalendar/Day25";
-import TooEarly from "./AdventCalendar/TooEarly";
 
 export default function App() {
   return (
@@ -61,7 +60,6 @@ export default function App() {
         <Route path="Day23" element={<Day23 />} />
         <Route path="Day24" element={<Day24 />} />
         <Route path="Day25" element={<Day25 />} />
-        <Route path="*" element={<TooEarly />} />
       </Routes>
     </BrowserRouter>
   );

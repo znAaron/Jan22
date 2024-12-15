@@ -18,7 +18,7 @@ const DogImages = () => {
     <div
       style={{
         padding: "20px",
-        marginTop: "20px", // Space between sections
+        marginTop: "100px", // Space between sections
       }}
     >
       <hr style={{ margin: "20px 0", borderTop: "2px solid #ddd" }} /> {/* Divider */}
