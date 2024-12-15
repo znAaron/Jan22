@@ -10,7 +10,7 @@ function Day20() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "5";
+    "嗨，我是比格犬栗子。离圣诞节只有不到5天啦，到处都有好多好闪亮的圣诞树。如果由我来装饰圣诞树的话，我一定会在树上挂好多好多糖果和饼干。这样过了圣诞节就不需要把它们拿下来，只需要吃掉就好啦！";
 
   const [isTyping, setIsTyping] = useState(false);
 

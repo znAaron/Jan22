@@ -10,7 +10,7 @@ function Day22() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "3";
+    "Jingle Bells, Jingle Bells, sleigh ride in the snow🎵你听到那歌声了吗，感觉圣诞真的很近了。听说在挪威人们会从平安夜起每晚点一支蜡烛直到新年。所以今天的礼物也是好闻的蜡烛！希望它能给你带来一个宁静温暖的夜晚www";
 
   const [isTyping, setIsTyping] = useState(false);
 

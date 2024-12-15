@@ -10,7 +10,7 @@ function Day21() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "4";
+    "还有4天，剩下3张，就快完成了... 呀，你好，我叫Molly，我正在给我的笔友们写圣诞贺卡呢。这是给大伯的，这是给佩佩的，还有给小德的。感觉写贺卡真的是一件非常费脑但是令人幸福的事情，好想知道收到贺卡的狗狗会是什么感受呢。";
 
   const [isTyping, setIsTyping] = useState(false);
 

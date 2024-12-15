@@ -1,62 +1,16 @@
-import React, { useState } from "react";
+import HeroSection from "./HeroSection";
+import DogImages from "./DogImages";
+import MusicIcon from "./MusicIcon";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import "./days.css";
-import Puppy from "./Puppy_day25.png";
-import Paw from "./paw.png";
-
-function Day25() {
-  const [isToastVisible, setToastVisible] = useState(false);
-  const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
-
-  const fullText =
-    "0";
-
-  const [isTyping, setIsTyping] = useState(false);
-
-    const typeText = () => {
-      if (isTyping) return; // Prevent multiple intervals if already typing
-  
-      setIsTyping(true); // Set isTyping to true to block new invocations
-  
-      let index = -1;
-  
-      const interval = setInterval(() => {
-        setDisplayText((prevText) => prevText + fullText[index]);
-        index++;
-  
-        if (index >= fullText.length - 1) {
-          clearInterval(interval);
-          setIsTyping(false); // Reset isTyping after completion
-        }
-      }, 80);
-    }
-
-  // Function to show the toast and start the typing effect
-  const PuppyTalk = () => {
-    if (isToastVisible) return; // Prevent multiple toasts if already visible
-
-    setToastVisible(true);
-    setDisplayText("");
-    typeText();
-  };
-
+const Day25 = () => {
   return (
-    <div className="AdventCalendar">
-      <body>
-        <div
-          className={`bubble medium bottom puppy-toast ${
-            isToastVisible ? "visible" : "hidden"
-          }`}
-        >
-          <div className="toast-test">{displayText}</div>
-        </div>
-        <img src={Puppy} className="Puppy" />
-        <button className="puppy-btn">
-          <img src={Paw} onClick={PuppyTalk} className="Paw" alt="Puppy Paw" />
-        </button>
-      </body>
+    <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#E40F37", padding: "20px" }}>
+      <HeroSection/>
+      <MusicIcon />
+      <DogImages />
     </div>
   );
-}
+};
 
 export default Day25;

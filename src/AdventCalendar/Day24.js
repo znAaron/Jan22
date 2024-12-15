@@ -10,7 +10,7 @@ function Day24() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "初次见面（应该是吧）！我的代号叫404，如果你还没见过我，说明你很乖哦。明天就是圣诞节啦，好期待！";
+    "初次见面（应该是吧）！我的代号叫404。如果你还没见过我，说明你很乖哦，可以从圣诞老人的naughty list上划掉了。 明天就是圣诞节啦，好期待圣诞老人会送来什么礼物呢";
 
   const [isTyping, setIsTyping] = useState(false);
 

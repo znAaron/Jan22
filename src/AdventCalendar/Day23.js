@@ -10,7 +10,7 @@ function Day23() {
   const [displayText, setDisplayText] = useState(""); // Text being displayed dynamically
 
   const fullText =
-    "小德警官";
+    "敬礼！小德警官前来报到。就算是节日也不能放松巡逻，这样才能保护你和大家。还有2天就要圣诞节啦，希望这个圣诞大家也都能平安。这是小德警官的礼物，祝你节日愉快！";
 
   const [isTyping, setIsTyping] = useState(false);
 
